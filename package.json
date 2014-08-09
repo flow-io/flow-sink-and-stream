@@ -1,7 +1,7 @@
 {
   "name": "flow-sink-and-stream",
   "version": "0.0.0",
-  "description": "Transform stream factory to sink a specified number of streamed data values and then stream new values as they arrive.",
+  "description": "Transform stream factory to sink a specified number of streamed data values and then stream new data values as they arrive.",
   "author": {
     "name": "Athan Reines",
     "email": "athan@nodeprime.com"

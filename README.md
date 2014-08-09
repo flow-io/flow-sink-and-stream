@@ -1,7 +1,7 @@
 flow-sink-and-stream
 ====================
 
-
+Transform stream factory to sink a specified number of streamed data values and then stream new data values as they arrive. 
 
 
 ## Installation
@@ -74,6 +74,10 @@ var stream = tStream()
 // Pipe the data:
 readStream.pipe( stream )
 	.pipe( eventStream.map( function( d, clbk ){
+		if ( Array.isArray( d ) ) {
+			clbk( null, JSON.stringify( d )+'\n' );
+			return;
+		}
 		clbk( null, d.toString()+'\n' );
 	}))
 	.pipe( process.stdout );
